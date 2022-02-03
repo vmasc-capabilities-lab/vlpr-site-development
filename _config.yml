@@ -20,7 +20,7 @@ text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", 
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : The Virginia Philosophy Reality Lab
+title   : Virginia Philosophy Reality Lab
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
 
@@ -159,7 +159,7 @@ pageview:
 ## => Search
 ##############################
 search:
-  provider: default # "default" (default), false, "google", "custom"
+  provider: false # "default" (default), false, "google", "custom"
 
   ## Google Custom Search Engine
   google:
@@ -223,3 +223,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+
+collections:
+  - contrib_partners
+
