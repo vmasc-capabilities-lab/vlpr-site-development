@@ -17,6 +17,11 @@
 <div class="article-list items items--divided">
 {%- elsif include.type == 'brief' -%}
 <div class="article-list items">
+  <div class="container">
+    <div class="section-title">
+        <h1>Team #9</h1>
+    </div>
+    <div class="row">
 {%- elsif include.type == 'grid' -%}
   {%- if include.size == 'sm' -%}
   <div class="article-list grid grid--sm grid--p-3">
@@ -81,31 +86,28 @@
 
 
     {%- elsif include.type == 'brief' -%}
-      {%- assign _tags = '' -%}
-      {%- for _tag in _article.tags -%}
-        {%- assign _tag_encode = _tag | strip | url_encode -%}
-        {%- if forloop.last -%}
-          {%- assign _tags = _tags | append: _tag_encode -%}
-        {%- else -%}
-          {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
-        {%- endif -%}
-      {%- endfor -%}
-      {%- if include.group_by == 'year' -%}
-        {%- assign _currentdate = _article.date | date: '%Y' -%}
-        {%- if _currentdate != _date -%}
-          {%- unless forloop.first -%}</ul></section>{%- endunless -%}
-          <section><h2 class="article-list__group-header">{{ _currentdate }}</h2><ul class="items">
-          {%- assign _date = _currentdate -%}
-        {%- endif -%}
-      {%- endif -%}
-      {%- include snippets/get-locale-string.html key='ARTICLE_LIST_DATE_FORMAT' -%}
-      <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}">
-        <div class="item__content">
-          {%- if include.show_info -%}
-            <span class="item__meta">{{ _article.date | date: __return }}</span>
-          {%- endif -%}
-          <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a></div>
-      </li>
+        <!-- Team #9 Start -->
+        <div class="column">
+                  <div class="team-9">
+                      <div class="team-img">
+                          <img src= "{{ _article.cover }}" alt="Team Image">
+                      </div>
+                      <div class="team-content">
+                          <h2>{{ _article.title }}</h2>
+                      </div>
+                      <div class="team-overlay">
+                          <p>{{ _article.content }}</p>
+                          <div class="team-social">
+                              <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                              <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                              <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                              <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                              <a class="social-yt" href=""><i class="fab fa-youtube"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                </div> 
+      <!-- Team #9 End -->
 
     {%- elsif include.type == 'grid' -%}
       {%- if include.size == 'sm' -%}
@@ -140,5 +142,8 @@
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
+
+</div>             
+</div> 
 
 </div>
